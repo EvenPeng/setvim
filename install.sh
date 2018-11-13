@@ -1,6 +1,11 @@
-# Install vim-plug
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# Install dependencies
+sudo apt-get update
+sudi apt-install -y \
+		vim \
+		curl \
+		build-essential \
+		cmake \
+		python3-dev
 
 # Copy vimrc
 cp .vimrc ~/.vimrc
