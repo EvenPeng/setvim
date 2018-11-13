@@ -1,6 +1,6 @@
 # Install dependencies
 sudo apt-get update
-sudo apt-install -y \
+sudo apt-get install -y \
 		vim \
 		curl \
 		build-essential \
