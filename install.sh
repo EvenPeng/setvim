@@ -15,4 +15,4 @@ vim -E -c PlugInstall -c qall!
 
 # Install YCM
 cd ~/.vim/plugged/youcompleteme
-sh install.sh
+python3 install.py
