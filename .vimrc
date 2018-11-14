@@ -1,10 +1,3 @@
-" Install vim-plug
-if empty(glob('~/.vim/autoload/plug.vim'))
-	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs 
-		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall --sync | source ~/.vimrc
-endif
-
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
@@ -20,6 +13,7 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'rhysd/vim-clang-format'
+Plug 'townk/vim-autoclose'
 
 " Initialize plugin system
 call plug#end()
@@ -67,6 +61,7 @@ let g:cpp_class_scope_highlight     = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight      = 1
 
+
 " For vim-clang-format
 let g:clang_format#style_options = {
 	\ "ColumnLimit": 120,
@@ -75,3 +70,7 @@ let g:clang_format#style_options = {
 	\ "AlwaysBreakTemplateDeclarations" : "true",
 	\ "Standard" : "C++11",
 	\ "BreakBeforeBraces" : "Stroustrup"}
+
+
+" For vim-autoclose
+let g:AutoClosePumvisible = {"ENTER": "", "ESC": ""}
