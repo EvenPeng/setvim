@@ -14,6 +14,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'rhysd/vim-clang-format'
 Plug 'townk/vim-autoclose'
+Plug 'fatih/vim-go'
 
 " Initialize plugin system
 call plug#end()
