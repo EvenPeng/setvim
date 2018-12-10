@@ -18,6 +18,7 @@ Plug 'ap/vim-css-color'
 Plug 'alvan/vim-closetag'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Initialize plugin system
 call plug#end()
@@ -39,6 +40,7 @@ nmap ga <Plug>(EasyAlign)
 syntax enable
 set background=dark
 colorscheme solarized
+let g:solarized_termcolors=256
 
 
 " For youcompleteme
@@ -91,3 +93,8 @@ let g:AutoClosePumvisible = {"ENTER": "", "ESC": ""}
 " For vim-closetag
 let g:closetag_filenames = '*.html,*.js'
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+
+
+" For vim-prettier
+let g:prettier#config#print_width = 120
+let g:prettier#autoformat = 1
