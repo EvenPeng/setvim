@@ -5,7 +5,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-easy-align'
 Plug 'vim-airline/vim-airline'
-Plug 'rdnetto/ycm-generator'
 Plug 'valloric/youcompleteme'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/syntastic'
@@ -15,6 +14,10 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'rhysd/vim-clang-format'
 Plug 'townk/vim-autoclose'
 Plug 'fatih/vim-go'
+Plug 'ap/vim-css-color'
+Plug 'alvan/vim-closetag'
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
 
 " Initialize plugin system
 call plug#end()
@@ -64,14 +67,27 @@ let g:cpp_class_decl_highlight      = 1
 
 
 " For vim-clang-format
-let g:clang_format#style_options = {
-	\ "ColumnLimit": 120,
-	\ "AccessModifierOffset" : -4,
-	\ "AllowShortIfStatementsOnASingleLine" : "true",
-	\ "AlwaysBreakTemplateDeclarations" : "true",
-	\ "Standard" : "C++11",
-	\ "BreakBeforeBraces" : "Stroustrup"}
+let g:clang_format#filetype_style_options = {
+	\ "cpp": {
+	\ 	"ColumnLimit": 120,
+	\ 	"AccessModifierOffset": -4,
+	\ 	"AllowShortIfStatementsOnASingleLine": "true",
+	\ 	"AlwaysBreakTemplateDeclarations": "true",
+	\	"AlignConsecutiveAssignments": "true",
+	\ 	"Standard": "C++11",
+	\ 	"BreakBeforeBraces": "Stroustrup"
+	\ },
+	\ "javascript" : {
+	\	"BasedOnStyle": "Google",
+	\	"AlignConsecutiveAssignments": "true"
+	\ }
+	\}
 
 
 " For vim-autoclose
 let g:AutoClosePumvisible = {"ENTER": "", "ESC": ""}
+
+
+" For vim-closetag
+let g:closetag_filenames = '*.html,*.js'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
