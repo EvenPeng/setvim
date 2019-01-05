@@ -73,9 +73,15 @@ let g:clang_format#filetype_style_options = {
 	\ "cpp": {
 	\ 	"ColumnLimit": 120,
 	\ 	"AccessModifierOffset": -4,
+	\	"AllowShortFunctionsOnASingleLine": "All",
 	\ 	"AllowShortIfStatementsOnASingleLine": "true",
 	\ 	"AlwaysBreakTemplateDeclarations": "true",
 	\	"AlignConsecutiveAssignments": "true",
+	\	"AlignConsecutiveDeclarations": "true",
+	\	"AlignEscapedNewlines": "Left",
+	\	"DerivePointerAlignment": "false",
+	\	"PointerAlignment": "Right",
+	\	"IndentCaseLabels": "false",
 	\ 	"Standard": "C++11",
 	\ 	"BreakBeforeBraces": "Stroustrup"
 	\ },
