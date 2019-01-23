@@ -6,7 +6,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-easy-align'
 Plug 'vim-airline/vim-airline'
 Plug 'valloric/youcompleteme'
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
+Plug 'sickill/vim-monokai'
 Plug 'scrooloose/syntastic'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'octol/vim-cpp-enhanced-highlight'
@@ -37,11 +38,14 @@ nmap ga <Plug>(EasyAlign)
 
 
 " For vim-colors-solarized
-syntax enable
-set background=dark
-colorscheme solarized
-let g:solarized_termcolors=256
+" syntax enable
+" set background=dark
+" colorscheme solarized
+" let g:solarized_termcolors=256
 
+" For vim-monokai
+syntax enable
+colorscheme monokai
 
 " For youcompleteme
 set encoding=utf-8
