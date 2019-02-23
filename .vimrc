@@ -29,6 +29,8 @@ set number
 set ruler
 set hlsearch
 set tabstop=4
+set shiftwidth=4
+set expandtab
 
 " For vim-easy-align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -87,10 +89,17 @@ let g:clang_format#filetype_style_options = {
 	\	"PointerAlignment": "Right",
 	\	"IndentCaseLabels": "false",
 	\ 	"Standard": "C++11",
+	\	"BasedOnStyle": "LLVM",
 	\ 	"BreakBeforeBraces": "Stroustrup"
 	\ },
 	\ "javascript" : {
 	\	"BasedOnStyle": "Google",
+	\	"AlignConsecutiveAssignments": "true"
+	\ },
+	\ "proto" : {
+	\ 	"ColumnLimit": 120,
+	\	"BasedOnStyle": "Google",
+	\	"AlignConsecutiveAssignments": "true",
 	\	"AlignConsecutiveAssignments": "true"
 	\ }
 	\}
