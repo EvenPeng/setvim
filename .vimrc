@@ -100,7 +100,7 @@ let g:clang_format#filetype_style_options = {
 	\ 	"ColumnLimit": 120,
 	\	"BasedOnStyle": "Google",
 	\	"AlignConsecutiveAssignments": "true",
-	\	"AlignConsecutiveAssignments": "true"
+	\	"AlignConsecutiveDeclarations": "true"
 	\ }
 	\}
 
