@@ -6,23 +6,28 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-easy-align'
 Plug 'vim-airline/vim-airline'
 Plug 'valloric/youcompleteme'
-" Plug 'altercation/vim-colors-solarized'
 Plug 'sickill/vim-monokai'
 Plug 'scrooloose/syntastic'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'rhysd/vim-clang-format'
-Plug 'townk/vim-autoclose'
 Plug 'fatih/vim-go'
 Plug 'ap/vim-css-color'
 Plug 'alvan/vim-closetag'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'katusk/vim-qkdb-syntax'
+Plug 'evanleck/vim-svelte'
+Plug 'luochen1990/rainbow'
+Plug 'jiangmiao/auto-pairs'
+Plug 'prettier/vim-prettier', {
+    \ 'do': 'yarn install',
+    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
 " Initialize plugin system
 call plug#end()
+
 
 " General setting
 set number
@@ -32,6 +37,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+
 " For vim-easy-align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
@@ -39,15 +45,10 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 
-" For vim-colors-solarized
-" syntax enable
-" set background=dark
-" colorscheme solarized
-" let g:solarized_termcolors=256
-
 " For vim-monokai
 syntax enable
 colorscheme monokai
+
 
 " For youcompleteme
 set encoding=utf-8
@@ -77,7 +78,6 @@ let g:cpp_class_decl_highlight      = 1
 " For vim-clang-format
 let g:clang_format#filetype_style_options = {
 	\ "cpp": {
-	\ 	"ColumnLimit": 120,
 	\ 	"AccessModifierOffset": -4,
 	\	"AllowShortFunctionsOnASingleLine": "All",
 	\ 	"AllowShortIfStatementsOnASingleLine": "true",
@@ -92,10 +92,6 @@ let g:clang_format#filetype_style_options = {
 	\	"BasedOnStyle": "LLVM",
 	\ 	"BreakBeforeBraces": "Stroustrup"
 	\ },
-	\ "javascript" : {
-	\	"BasedOnStyle": "Google",
-	\	"AlignConsecutiveAssignments": "true"
-	\ },
 	\ "proto" : {
 	\ 	"ColumnLimit": 120,
 	\	"BasedOnStyle": "Google",
@@ -105,15 +101,17 @@ let g:clang_format#filetype_style_options = {
 	\}
 
 
-" For vim-autoclose
-let g:AutoClosePumvisible = {"ENTER": "", "ESC": ""}
-
-
 " For vim-closetag
 let g:closetag_filenames = '*.html,*.js'
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
 
 
+" For rainbow
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+
+
 " For vim-prettier
-let g:prettier#config#print_width = 120
+" let g:prettier#config#print_width = 120
 let g:prettier#autoformat = 1
+
+autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
