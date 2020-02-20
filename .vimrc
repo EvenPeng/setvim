@@ -100,6 +100,8 @@ let g:clang_format#filetype_style_options = {
 	\ }
 	\}
 
+autocmd BufWritePre *.c,*.h,*.cpp,*.hpp ClangFormat
+
 
 " For vim-closetag
 let g:closetag_filenames = '*.html,*.js'
@@ -111,7 +113,6 @@ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowTo
 
 
 " For vim-prettier
-" let g:prettier#config#print_width = 120
 let g:prettier#autoformat = 1
 
-autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
