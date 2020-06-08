@@ -21,6 +21,10 @@ Plug 'katusk/vim-qkdb-syntax'
 Plug 'evanleck/vim-svelte'
 Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'nvie/vim-flake8'
 Plug 'prettier/vim-prettier', {
     \ 'do': 'yarn install',
     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
@@ -36,6 +40,18 @@ set hlsearch
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set clipboard=unnamed
+
+
+" For PEP8
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
 
 
 " For vim-easy-align
@@ -52,6 +68,8 @@ colorscheme monokai
 
 " For youcompleteme
 set encoding=utf-8
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
 " For syntastic
@@ -59,6 +77,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list            = 1
 let g:syntastic_check_on_open            = 1
@@ -116,3 +135,7 @@ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowTo
 let g:prettier#autoformat = 1
 
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
+
+" For Flake8
+let python_highlight_all=1
