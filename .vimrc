@@ -29,6 +29,9 @@ Plug 'prettier/vim-prettier', {
     \ 'do': 'yarn install',
     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
+Plug 'thosakwe/vim-flutter'
+Plug 'dart-lang/dart-vim-plugin'
+
 " Initialize plugin system
 call plug#end()
 
@@ -133,9 +136,16 @@ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowTo
 
 " For vim-prettier
 let g:prettier#autoformat = 1
+au Filetype yaml let g:prettier#config#tab_width = 2
 
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 
 " For Flake8
 let python_highlight_all=1
+
+
+" For Dart
+let dart_html_in_string = v:true
+let g:dart_style_guide = 2
+let g:dart_format_on_save = 1
